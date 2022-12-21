@@ -1,4 +1,5 @@
 export function getAppointmentsForDay(state, day) {
+  console.log("STATE", state);
   const daysObj = state.days.filter((filterDay) => filterDay.name == day);
 
   if (daysObj.length === 0) {
@@ -14,7 +15,7 @@ export function getAppointmentsForDay(state, day) {
   return filteredAppointsArray;
 }
 
-// The function should return a new object containing the interview data when we pass it an object that contains the interviewer. Otherwise, the function should return null. The object it returns should look like this:
+// The function should return a new object containing the interview data when we pass it an object that contains the interviewer. Otherwise, the function should return null.
 
 export function getInterview(state, interview) {
   if (!interview) {
@@ -43,9 +44,10 @@ export function getInterviewersForDay(state, day) {
   const daysInterviewersArray = daysObj[0].interviewers;
 
   const stateInterviewersArray = Object.values(state.interviewers);
-  const filteredAppointsArray = stateInterviewersArray.filter(
+
+  const filteredInterviewersArray = stateInterviewersArray.filter(
     (interviewerObj) => daysInterviewersArray.includes(interviewerObj.id)
   );
 
-  return filteredAppointsArray;
+  return filteredInterviewersArray;
 }
