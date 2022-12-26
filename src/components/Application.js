@@ -19,13 +19,10 @@ export default function Application() {
 
   useEffect(() => {
     Promise.all([
-      axios.get("/api/days"),
-      axios.get("/api/appointments"),
-      axios.get("/api/interviewers"),
+      axios.get("http://localhost:8001/api/days"),
+      axios.get("http://localhost:8001/api/appointments"),
+      axios.get("http://localhost:8001/api/interviewers"),
     ]).then((all) => {
-      console.log(all[0]);
-      console.log(all[1]);
-      console.log(all[2]);
       setState((prev) => ({
         ...prev,
         days: all[0].data,
@@ -42,6 +39,21 @@ export default function Application() {
   const setDay = (day) => {
     setState({ ...state, day });
   };
+
+  function cancelInterview(id) {
+    const appointment = {
+      ...state.appointments[id],
+    };
+
+    appointment.interview = null;
+
+    const appointments = {
+      ...state.appointments,
+      [id]: appointment,
+    };
+
+    setState({ ...state, appointments });
+  }
 
   function bookInterview(id, interview) {
     const appointment = {
@@ -63,6 +75,7 @@ export default function Application() {
     return (
       <Appointment
         bookInterview={bookInterview}
+        cancelInterview={cancelInterview}
         key={appointment.id}
         {...appointment}
         interview={interview}

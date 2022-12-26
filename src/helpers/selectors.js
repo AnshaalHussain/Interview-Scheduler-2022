@@ -1,6 +1,6 @@
 export function getAppointmentsForDay(state, day) {
-  console.log("STATE", state);
-  const daysObj = state.days.filter((filterDay) => filterDay.name == day);
+  const stateDaysCopy = [...state.days];
+  const daysObj = stateDaysCopy.filter((filterDay) => filterDay.name == day);
 
   if (daysObj.length === 0) {
     return [];
@@ -21,14 +21,14 @@ export function getInterview(state, interview) {
   if (!interview) {
     return null;
   }
-
-  const interviewersList = Object.values(state.interviewers);
+  const newInterviewersCopy = { ...state.interviewers };
+  const interviewersList = Object.values(newInterviewersCopy);
 
   const filteredArray = interviewersList.filter(
     (interviewersObj) => interviewersObj.id == interview.interviewer
   );
 
-  let newInterviewerObj = interview;
+  let newInterviewerObj = { ...interview };
   newInterviewerObj.interviewer = filteredArray[0];
 
   return newInterviewerObj;
