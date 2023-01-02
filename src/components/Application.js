@@ -15,6 +15,8 @@ export default function Application() {
   const { state, setDay, bookInterview, cancelInterview } =
     useApplicationData();
 
+  console.log("state", state);
+
   const interviewers = getInterviewersForDay(state, state.day);
 
   const dailyAppointments = getAppointmentsForDay(state, state.day);

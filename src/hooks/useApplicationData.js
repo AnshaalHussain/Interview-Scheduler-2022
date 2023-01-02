@@ -28,6 +28,48 @@ const useApplicationData = () => {
     setState({ ...state, day });
   };
 
+  function spotsRemaining(id, book = false, cancel = false) {
+    for (let item in state.days) {
+      if (state.days[item].name === state.day) {
+        if (book) {
+          const calcSpots = (state.days[item].spots -= 1);
+
+          const newDayObj = { ...state.days[item], spots: calcSpots };
+
+          const newDaysArray = [...state.days];
+
+          const mappedNewDaysArray = newDaysArray.map((dayObj) => {
+            if (dayObj.name === state.day) {
+              return newDayObj;
+            } else {
+              return dayObj;
+            }
+          });
+
+          const newState = { ...state, days: mappedNewDaysArray };
+        }
+
+        if (cancel) {
+          const calcSpots = (state.days[item].spots += 1);
+
+          const newDayObj = { ...state.days[item], spots: calcSpots };
+
+          const newDaysArray = [...state.days];
+
+          const mappedNewDaysArray = newDaysArray.map((dayObj) => {
+            if (dayObj.name === state.day) {
+              return newDayObj;
+            } else {
+              return dayObj;
+            }
+          });
+
+          const newState = { ...state, days: mappedNewDaysArray };
+        }
+      }
+    }
+  }
+
   async function cancelInterview(id) {
     const appointment = {
       ...state.appointments[id],
@@ -41,6 +83,7 @@ const useApplicationData = () => {
     };
 
     await axios.delete(`/api/appointments/${id}`).then((res) => {
+      spotsRemaining(id, false, true);
       setState({ ...state, appointments });
     });
   }
@@ -57,6 +100,7 @@ const useApplicationData = () => {
     };
 
     await axios.put(`/api/appointments/${id}`, { interview }).then((res) => {
+      spotsRemaining(id, true);
       setState({ ...state, appointments });
     });
   }
