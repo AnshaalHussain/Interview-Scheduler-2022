@@ -6,7 +6,7 @@ export function useVisualMode(initial) {
 
   useEffect(() => {
     setMode(initial);
-  }, []);
+  }, [initial]);
 
   const transition = (transitionMode, replace = false) => {
     setMode(transitionMode);
