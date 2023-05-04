@@ -47,6 +47,7 @@ const useApplicationData = () => {
           });
 
           const newState = { ...state, days: mappedNewDaysArray };
+          setState(newState);
         }
 
         if (cancel) {
@@ -65,6 +66,7 @@ const useApplicationData = () => {
           });
 
           const newState = { ...state, days: mappedNewDaysArray };
+          setState(newState);
         }
       }
     }
