@@ -53,6 +53,36 @@ export default function Application() {
           src="images/lhl.png"
           alt="Lighthouse Labs"
         />
+        <div className="sidebar__credit sidebar--centered">
+          Link to{" "}
+          <a
+            className="sidebar__link"
+            target="_blank"
+            href="https://github.com/AnshaalHussain/Interview-Scheduler-2022#interview-scheduler"
+            rel="noopener noreferrer"
+          >
+            Github
+          </a>
+        </div>
+        <div className="sidebar__credit sidebar--centered">
+          <a
+            className="sidebar__link"
+            target="_blank"
+            href="https://icons8.com/icon/s4Xt7WXfxRMk/scheduler"
+            rel="noopener noreferrer"
+          >
+            Scheduler{" "}
+          </a>
+          icon by{" "}
+          <a
+            className="sidebar__link"
+            target="_blank"
+            href="https://icons8.com"
+            rel="noopener noreferrer"
+          >
+            Icons8
+          </a>
+        </div>
       </section>
       <section className="schedule">{appointmentsArray}</section>
     </main>

@@ -24,8 +24,31 @@
   }
 
   &__lhl {
-    margin-top: 2rem;
+    margin-bottom: 1.5rem;
   }
+
+  &__credit {
+    color: #8395a7;
+    margin-bottom: 0.5rem;
+    height: 1rem
+
+  }
+
+  &__link {
+    text-decoration: none;
+    color: rgba($booked-color, $active-opacity);
+
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+
+  @media only screen and (max-width: 960px) {
+    &__credit {
+      display: none;
+    }
+}
 }
 
 .schedule {
