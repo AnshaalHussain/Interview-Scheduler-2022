@@ -17,9 +17,9 @@ The application ensures a seamless experience by dynamically updating and presen
 ## Built with
 
 * [React](https://reactjs.org/)
+* [Node.js](https://nodejs.org/en/about)
 * [Express](https://expressjs.com/)
 * [PostgreSQL](https://www.postgresql.org/)
-* [Node](https://nodejs.org/en/about)
 
 ### Testing
 * [Jest](https://jestjs.io/)
