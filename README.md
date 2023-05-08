@@ -15,10 +15,20 @@ The application ensures a seamless experience by dynamically updating and presen
 ## Built with
 
 * [React](https://reactjs.org/)
-* [PostgreSQL](https://www.postgresql.org/)
 * [Express](https://expressjs.com/)
-* [Node.js](https://nodejs.org/en/about)
+* [PostgreSQL](https://www.postgresql.org/)
+* [Node](https://nodejs.org/en/about)
+
+### Testing
+* [Jest](https://jestjs.io/)
+* [StoryBook](https://storybook.js.org/)
+
+### Deployment
 * [Railway](https://railway.app/)
+* [Netlify](https://www.netlify.com/)
+* [CircleCI](https://circleci.com/)
+
+
 
 
 ## Setup
