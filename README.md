@@ -12,6 +12,8 @@ The primary goal of Interview Scheduler is to provide users with the ability to 
 
 The application ensures a seamless experience by dynamically updating and presenting the available spots for each day. Whether users are creating, editing, or deleting appointments, the application responds in real-time to reflect the accurate number of remaining spots for a given day. This functionality allows users to make informed decisions while scheduling appointments and helps them easily identify available time slots. 
 
+<img src="media/scheduler_desktopview.png">
+
 ## Built with
 
 * [React](https://reactjs.org/)
@@ -24,12 +26,9 @@ The application ensures a seamless experience by dynamically updating and presen
 * [StoryBook](https://storybook.js.org/)
 
 ### Deployment
-* [Railway](https://railway.app/)
 * [Netlify](https://www.netlify.com/)
+* [Railway](https://railway.app/)
 * [CircleCI](https://circleci.com/)
-
-
-
 
 ## Setup
 
