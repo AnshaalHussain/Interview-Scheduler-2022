@@ -21,7 +21,7 @@ The application ensures a seamless experience by dynamically updating and presen
 * [Express](https://expressjs.com/)
 * [PostgreSQL](https://www.postgresql.org/)
 
-### Testing
+### Testing & Tools
 * [Jest](https://jestjs.io/)
 * [StoryBook](https://storybook.js.org/)
 
